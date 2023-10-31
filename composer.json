@@ -1,0 +1,37 @@
+{
+    "name": "alirezasalehizadeh/routail",
+    "description": "A spidey PHP router.",
+    "keywords": ["php", "route", "router"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alireza Salehizadeh",
+            "email": "alirezasalehizadehco@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.6.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlirezaSalehizadeh\\Routail\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AlirezaSalehizadeh\\Routail\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
