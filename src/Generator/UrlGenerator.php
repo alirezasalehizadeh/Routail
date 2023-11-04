@@ -39,7 +39,7 @@ class UrlGenerator
     {
         $url = '';
 
-        foreach ($parameters as $key => $value) {
+        foreach ($parameters as $key => (string) $value) {
             if ($url !== '') {
                 $url = preg_replace("/\{($key)(?:\:([a-zA-Z]+))?\}/", $value, $url);
                 continue;
