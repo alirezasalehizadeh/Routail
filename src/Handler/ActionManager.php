@@ -16,11 +16,11 @@ class ActionManager
         }
 
         if (is_string($route->action)) {
-            return (new StringActionHandler)->handle($route->action);
+            return (new StringActionHandler)->handle($route->action, $parameters);
         }
 
         if (is_array($route->action)) {
-            return (new ArrayActionHandler)->handle($route->action);
+            return (new ArrayActionHandler)->handle($route->action, $parameters);
         }
     }
 }

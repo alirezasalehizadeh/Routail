@@ -6,12 +6,12 @@ namespace AlirezaSalehizadeh\Routail\Handler;
 
 class StringActionHandler
 {
-    public function handle(string $action)
+    public function handle(string $action, array $parameters = [])
     {
         $action = explode('@', $action);
         $controller = basename($action[0]);
         $method = $action[1];
         $controller = new $controller;
-        return $controller->$method();
+        return call_user_func([$controller, $method], $parameters);
     }
 }

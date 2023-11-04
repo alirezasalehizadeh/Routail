@@ -6,11 +6,11 @@ namespace AlirezaSalehizadeh\Routail\Handler;
 
 class ArrayActionHandler
 {
-    public function handle(array $action)
+    public function handle(array $action, array $parameters = [])
     {
         $controller = $action[0];
         $method = $action[1];
         $controller = new $controller;
-        return $controller->$method();
+        return call_user_func([$controller, $method], $parameters);
     }
 }
