@@ -11,6 +11,6 @@ class ArrayActionHandler
         $controller = $action[0];
         $method = $action[1];
         $controller = new $controller;
-        return call_user_func([$controller, $method], $parameters);
+        return call_user_func_array([$controller, $method], $parameters);
     }
 }
