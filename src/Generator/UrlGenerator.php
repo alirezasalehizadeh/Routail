@@ -39,12 +39,12 @@ class UrlGenerator
     {
         $url = '';
 
-        foreach ($parameters as $key => (string) $value) {
+        foreach ($parameters as $key => $value) {
             if ($url !== '') {
-                $url = preg_replace("/\{($key)(?:\:([a-zA-Z]+))?\}/", $value, $url);
+                $url = preg_replace("/\{($key)(?:\:([a-zA-Z]+))?\}/", (string)$value, $url);
                 continue;
             }
-            $url = preg_replace("/\{($key)(?:\:([a-zA-Z]+))?\}/", $value, $this->route->getPattern());
+            $url = preg_replace("/\{($key)(?:\:([a-zA-Z]+))?\}/", (string)$value, $this->route->getPattern());
         }
         return $url;
     }
